@@ -23,7 +23,7 @@ MLflow has the following components which you can use to leverage your ML projec
 4. MLflow on localhost with a Tracking server & SQlite database.
 4. Optionally using MLflow with a remote Tracking server, backend & artifacts stores.
 
-#### Part 2:- Tracking a TensorFlow model's performance:-
+#### Part 2:- Tracking a TensorFlow model's performance(Work Ongoing):-
 * This will contains same steps as for the ML model on Part 1.
 
 
@@ -171,7 +171,7 @@ You can download the results from the mlflow ui as a csv file for future referen
 ### Things to be covered:-
 1. Hosting the MLflow server on remote host.
 
-# Tensorflow/Keras:- 
+# Tensorflow/Keras(Work Ongoing):- 
 Run:-
 ```
 python tf_mlflow_demo.py
