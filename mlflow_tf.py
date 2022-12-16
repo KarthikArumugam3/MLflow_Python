@@ -50,6 +50,7 @@ model.add(Activation("softmax"))
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
+# Training
 history = model.fit(
     x_train, y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_split=0.1
 )

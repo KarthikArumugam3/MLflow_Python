@@ -39,7 +39,7 @@ if __name__ == "__main__":
     try:
         data = pd.read_csv(csv_url, sep=";")
     except Exception as e:
-        logger.exception(
+        logger.exception( 
             "Unable to download training & test CSV, check your internet connection. Error: %s", e
         )
 
@@ -55,12 +55,12 @@ if __name__ == "__main__":
     alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.5
     l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
-    # Changes - S
+    # Changes
     mlflow.set_tracking_uri("http://127.0.0.1:1234")
 
     mlflow.set_experiment('MLflow demo') # For every different experiment name the results will be stored in a diff folder in mlruns like 0,1 or 2 and so on
 
-    # Changes - E
+    # Changes
 
     with mlflow.start_run(run_name="LR model"):
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
