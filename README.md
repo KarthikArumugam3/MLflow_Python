@@ -80,7 +80,7 @@ After testing different hyperparameters values you can visualize/compare the per
 * Run following command to view & comapre the results on dashboard on localhost.
 ```
 mlflow ui
-```
+``` 
 
 Create a short video of navigation on ui:-
 1. select all the checkboxes
@@ -137,8 +137,9 @@ python mlflow_lr.py alpha_value l1_ratio_value
 * After this since it is a normal run where you are not using a server you can use ```mlfow ui``` to access the dashboard
 
 3. Any additional changes like **run_name** if added will also be reflected on the UI.
+4. MLflow also tells you execution time.
 
-### Navigating to the Models tab after comapring the results
+## Navigating to the Models tab after comapring the results
 Models tab on the dashborad shows the registered models i.e. the models for which we have run the experiments. For ex:- If we run the mlflow_lr.py 4 times with different hyperparameters values under the exp name:-"ElasticWineModel", the experiment will show 4 different versions with the latest version as the 4th one.
 
 Further you can view any of these 4 versions and tag them accordingly, i.e select stage for the version. 
@@ -150,12 +151,11 @@ Different stage states:-
 2. Production - Final stable/accurate version for production
 3. Archive - not to be used in production 
 
-# MLflow also tells you execution time - see in dashboard
-
-### So what you need for the above:- 
-1. Set the tracing url     
+### So as a recap on setting tracking server on localhost:- 
+1. Set the tracking url     
 2. Set the experiment name to log all the results of that experiment within it.
-3. Register the model name - to log results of that model to that model name with certain version for tracking experiment results
+3. Register the model name - to log results of that model to that model name with certain version for tracking experiment results.
+
 
 Dynamic model name registering- Additionally you can also use the time module of python in conjunction to the registered model name to log results of that specific model with a timestamp  which will register each model with a unique timestamp.
 
