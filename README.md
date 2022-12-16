@@ -15,7 +15,7 @@ MLflow has the following components which you can use to leverage your ML projec
 
 ### This Repository contains:-
 ##### Part 1:- Tracking a Linear regression model's performance by tuning different hyperparameters:-
-1. An simple Elasticnet regression model with hyper parameter tuning.
+1. A simple Elasticnet regression model with hyper parameter tuning.
 2. Logging subsequent results of the testing into mlflow dashboard on localhost.
 3. Comparing the model perfomance according to different hyperparameters tuning done in several experiments.
 4. MLflow on localhost with a Tracking server & SQlite database.
