@@ -68,7 +68,7 @@ python mlflow_lr.py alpha_value l1_ratio_value
 ```
 
 ### Result after running the code:-
-Upon running the demo_mlfow.py code subsequent results will be stored in mlruns folder inside the same directory as that of the mlflow_lr.py
+Upon running the mlflow_lr.py code subsequent results will be stored in mlruns folder inside the same directory as that of the mlflow_lr.py
 ```
 mlruns/
 ```
@@ -126,7 +126,7 @@ python mlflow_lr.py
 ```
 OR
 ```
-python demo_mlfow.py alpha_value l1_ratio_value
+python mlflow_lr.py alpha_value l1_ratio_value
 ```
 # NOTE:-
 1. If you set the tracking server url then you have to run the mlfow server first followed by the mlflow_lr.py, otherwise it will throw an error.
