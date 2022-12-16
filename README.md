@@ -68,13 +68,13 @@ python mlflow_lr.py alpha_value l1_ratio_value
 ```
 
 ### Result after running the code:-
-Upon running the mlflow_lr.py code subsequent results will be stored in mlruns folder inside the same directory as that of the mlflow_lr.py
+Upon running the main code subsequent results will be stored in newly created **mlruns** folder inside the same working directory
 ```
 mlruns/
 ```
 
 ### Visualizing the performance on dashboard:-
-After testing different hyperparameters values you can visualize/compare the performance metrics using dashboard which mlflow will create using the results stored in mlruns folder.
+After testing different hyperparameters values you can visualize/compare the performance metrics using dashboard which mlflow will create using the results stored in **mlruns/** folder.
 * Run following command to view & comapre the results on dashboard on localhost.
 ```
 mlflow ui
@@ -86,14 +86,14 @@ Create a short video of navigation on ui:-
 3. select Parallel Coordinates Plot for better visualization
 
 ## Setting a Tracking server url & SQlite database
-### Setting remote server tracking url:-
+### Setting tracking server url:-
 ```
 mlflow.set_tracking_uri("http://127.0.0.1:1234")
 ```
 
 ### Creating a seperate experiment name:-
 
-If you just run the code without setting any experiment name it wil log all the values to the default tab in mlflow dashboard.
+If you just run the code without setting any experiment name it will log all the values to the default tab in mlflow dashboard.
 
 Set a custom experiment name:-
 ```
@@ -103,7 +103,7 @@ mlflow.set_experiment('MLflow demo')
 After giving certain experiment name all the result of that paricular experiment will be logged to the given experiment name in the MLflow UI
 
 ### Hosting MLflow on the newly added tracking server url:-
-After setting the tracking server url and experiment name in mlflow_lr.py, before running the mlflow_lr.py, we need to run the server also on the same port as well(1234)
+After setting the tracking server url and experiment name in mlflow_lr.py, before running the mlflow_lr.py, we need to run the server locally.
 
 1. MLflow server command
 ```
@@ -120,7 +120,7 @@ mlflow server \
 -p : Port Number
 ```
 2. MLflow driver code:-
-After that we have to run mlflow_lr.py simultaneaously
+After that we have TO run mlflow_lr.py to create new experiments
 ```
 python mlflow_lr.py
 ```
@@ -129,15 +129,15 @@ OR
 python mlflow_lr.py alpha_value l1_ratio_value
 ```
 # NOTE:-
-1. If you set the tracking server url then you have to run the mlfow server first followed by the mlflow_lr.py, otherwise it will throw an error.
+1. If you set the tracking server url then you have to run the tracking server locally first followed by the mlflow_lr.py, otherwise it will throw an error.
 * Then you can access the dashboard using the mlfow server link.
 2. If you have not set the remote tracking url then you can directly run the mlflow_lr.py
-* After this since it is a normal run where you are not using a server you can use "mlfow ui" to access the dashboard
+* After this since it is a normal run where you are not using a server you can use ```mlfow ui``` to access the dashboard
 
-Any additional changes like **run_name** will also be reflected on the UI
+3. Any additional changes like **run_name** if added will also be reflected on the UI.
 
 ### Navigating to the Models tab after comapring the results
-Models tab shows the registered models i.e. the models for which we have run the experiments. Currently for ex:- we ran the mlflow_lr.py 4 times with different hyperparameters values under the name:-"ElasticWineModel". After clicking on it, it will show 4 different versions with the latest version as the 4th one - see screenshots taken.
+Models tab on the dashborad shows the registered models i.e. the models for which we have run the experiments. For ex:- If we run the mlflow_lr.py 4 times with different hyperparameters values under the exp name:-"ElasticWineModel", the experiment will show 4 different versions with the latest version as the 4th one.
 
 Further you can view any of these 4 versions and tag them accordingly, i.e select stage for the version. 
 
