@@ -1,5 +1,7 @@
 # MLflow_Python
 
+![Mlflow](mlflow_tree.jpg)
+
 ## What is MLflow ?
 MLflow is a product of Databricks an open source platform for managing the end-to-end machine learning lifecycle.
 MLflow has the following components which you can use to leverage your ML projects:- 
