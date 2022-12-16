@@ -55,8 +55,6 @@ pip install -r requirements.txt
 # Part1:- MLflow for Sklearn
 A simple MLfow code to track & test your machine learning algorithms performance.
 
-Tutorial link:- https://www.youtube.com/watch?v=8xpDDB9w-h8
-
 ### Running the main code:-
 
 Default:-
