@@ -122,7 +122,7 @@ mlflow server \
 -p : Port Number
 ```
 2. MLflow driver code:-
-After that we have TO run mlflow_lr.py to create new experiments
+After that we have to run mlflow_lr.py to create new experiments
 ```
 python mlflow_lr.py
 ```
@@ -156,20 +156,20 @@ Different stage states:-
 2. Set the experiment name to log all the results of that experiment within it.
 3. Register the model name - to log results of that model to that model name with certain version for tracking experiment results.
 
+## Important points:-
+* Dynamic model name registering- Additionally you can also use the time module of python in conjunction to the registered model name to log results of that specific model with a timestamp  which will register each model with a unique timestamp.
 
-Dynamic model name registering- Additionally you can also use the time module of python in conjunction to the registered model name to log results of that specific model with a timestamp  which will register each model with a unique timestamp.
-
-But that wont be necessary everytime as MLflow deals with that by creating versions of every run, so for a model with name ElasticWineModel2, if you run the experiment for this model 2 times(hyperparameter tuning) then for each version it will keep a version number with time of creation for tracking.
+* But that wont be necessary everytime as MLflow deals with that by creating versions of every run, so for a model with name ElasticWineModel2, if you run the experiment for this model 2 times(hyperparameter tuning) then for each version it will keep a version number with time of creation for tracking.
 
 ### Navigating metrics graph within the models tab:-
 You can also compare the results of the performance metrics by using bar graph by comparing all the versions.
 
 ### Publishing experiment results:-
 
-You can download the the results as a csv file for reference
+You can download the results from the mlflow ui as a csv file for future reference.
 
-### Questions:-
-1. Hosting the MLflow server on remote host.- possible, see doc
+### Things to be covered:-
+1. Hosting the MLflow server on remote host.
 
 # Tensorflow/Keras:- 
 Run:-
