@@ -1,9 +1,7 @@
 # MLflow_Python
-MLflow is a product  of databricks.
-
 
 ## What is MLflow ?
-MLflow is an open source platform for managing the end-to-end machine learning lifecycle.
+MLflow is a product of Databricks an open source platform for managing the end-to-end machine learning lifecycle.
 MLflow has the following components which you can use to leverage your ML projects:- 
 1. Tracking: Allows you to track experiments to record and compare parameters and results.
 
