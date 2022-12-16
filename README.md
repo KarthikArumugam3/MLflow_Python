@@ -16,10 +16,10 @@ MLflow has the following components which you can use to leverage your ML projec
 ### This Repository contains:-
 ##### Part 1:- Tracking a Linear regression model's performance by tuning different hyperparameters:-
 1. A simple Elasticnet regression model with hyper parameter tuning.
-2. Logging subsequent results of the testing into mlflow dashboard on localhost.
-3. Comparing the model perfomance according to different hyperparameters tuning done in several experiments.
+2. Logging subsequent metrics & parameters of the testing into mlflow dashboard.
+3. Comparing the model perfomance from MLflow dashboard using the logged metrics of various experiments.
 4. MLflow on localhost with a Tracking server & SQlite database.
-4. Optionally using MLflow with a remote Tracking server, backen & artifacts stores.
+4. Optionally using MLflow with a remote Tracking server, backend & artifacts stores.
 
 #### Part 2:- Tracking a TensorFlow model's performance:-
 * This will contains same steps as for the ML model on Part 1.
@@ -61,16 +61,16 @@ Tutorial link:- https://www.youtube.com/watch?v=8xpDDB9w-h8
 
 Default:-
 ```
-python demo_mlflow.py
+python mlflow_lr.py
 ```
 
 To give custom values for alpha & l1_ratio:-
 ```
-python demo_mlflow.py alpha_value l1_ratio_value
+python mlflow_lr.py alpha_value l1_ratio_value
 ```
 
 ### Result after running the code:-
-Upon running the demo_mlfow.py code subsequent results will be stored in mlruns folder inside the same directory as that of the demo_mlflow.py
+Upon running the demo_mlfow.py code subsequent results will be stored in mlruns folder inside the same directory as that of the mlflow_lr.py
 ```
 mlruns/
 ```
@@ -105,7 +105,7 @@ mlflow.set_experiment('MLflow demo')
 After giving certain experiment name all the result of that paricular experiment will be logged to the given experiment name in the MLflow UI
 
 ### Hosting MLflow on the newly added tracking server url:-
-After setting the tracking server url and experiment name in demo_mlflow.py, before running the demo_mlflow.py, we need to run the server also on the same port as well(1234)
+After setting the tracking server url and experiment name in mlflow_lr.py, before running the mlflow_lr.py, we need to run the server also on the same port as well(1234)
 
 1. MLflow server command
 ```
@@ -122,24 +122,24 @@ mlflow server \
 -p : Port Number
 ```
 2. MLflow driver code:-
-After that we have to run demo_mlflow.py simultaneaously
+After that we have to run mlflow_lr.py simultaneaously
 ```
-python demo_mlflow.py
+python mlflow_lr.py
 ```
 OR
 ```
 python demo_mlfow.py alpha_value l1_ratio_value
 ```
 # NOTE:-
-1. If you set the tracking server url then you have to run the mlfow server first followed by the demo_mlflow.py, otherwise it will throw an error.
+1. If you set the tracking server url then you have to run the mlfow server first followed by the mlflow_lr.py, otherwise it will throw an error.
 * Then you can access the dashboard using the mlfow server link.
-2. If you have not set the remote tracking url then you can directly run the demo_mlflow.py
+2. If you have not set the remote tracking url then you can directly run the mlflow_lr.py
 * After this since it is a normal run where you are not using a server you can use "mlfow ui" to access the dashboard
 
 Any additional changes like **run_name** will also be reflected on the UI
 
 ### Navigating to the Models tab after comapring the results
-Models tab shows the registered models i.e. the models for which we have run the experiments. Currently for ex:- we ran the demo_mlflow.py 4 times with different hyperparameters values under the name:-"ElasticWineModel". After clicking on it, it will show 4 different versions with the latest version as the 4th one - see screenshots taken.
+Models tab shows the registered models i.e. the models for which we have run the experiments. Currently for ex:- we ran the mlflow_lr.py 4 times with different hyperparameters values under the name:-"ElasticWineModel". After clicking on it, it will show 4 different versions with the latest version as the 4th one - see screenshots taken.
 
 Further you can view any of these 4 versions and tag them accordingly, i.e select stage for the version. 
 
@@ -203,7 +203,7 @@ It basically stores almost all the neccessary results, like:-
 3. All neccessary hyperparameters in params/ folder
 
 
-# In demo_mlflow.py :-
+# In mlflow_lr.py :-
 
 You can also log any value to param or metriic that you thibk is necessary for tracking model performance
 
